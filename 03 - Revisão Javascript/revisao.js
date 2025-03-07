@@ -82,3 +82,28 @@ if (idade >= 18) {
 // Operador ternário
 const checkMaiorDeIdade = idade >= 18 ? "Maior de idade" : "Menor de idade";
 console.log(checkMaiorDeIdade)
+
+// ARRAY
+let frutas = ["maçã", "Banana", "uva"];
+console.log(frutas[0]);
+console.log(frutas[1]);
+console.log(frutas[2]);
+console.log(frutas.length);
+
+// Adicionar uma nova fruta ao array
+frutas.push("laranja");
+
+// Percorrer e imprimir todas as frutas
+frutas.forEach((fruta) => {
+  console.log(fruta);
+});
+frutas.pop();
+console.log(frutas);
+
+// Objetos
+let pessoa ={
+  nome: "Vitor",
+ idade : 24}
+
+// Adicionando novo obijeto 
+pessoa.email = "vitor@gmail.com"
