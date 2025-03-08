@@ -142,11 +142,11 @@ array()
 
 //Ex 07
 function tranformar(){
-    let frutas = ["Maçã", "Banana", "Abacaxi", "Laranja"]
+    let frutas = ["Maçã", "Banana", "Abacaxi", "Limão"]
     let frutasMaiusculas = frutas.map( fruta => fruta.toUpperCase())
     console.log(frutasMaiusculas)
 
-    let frutaA = frutas.filter(fruta => fruta.includes("A"))
+    let frutaA = frutas.filter(fruta => fruta.includes("Pera"))
     console.log(frutaA)
       
 }
@@ -156,7 +156,7 @@ tranformar()
 //Ex 08
 
 let pessoa = { 
-    nome: "Carlos", 
+    nome: "Antonio", 
     idade: 28, 
     cidade: "São Paulo" }
 
