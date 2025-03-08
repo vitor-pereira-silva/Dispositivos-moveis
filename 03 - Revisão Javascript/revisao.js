@@ -107,3 +107,4 @@ let pessoa ={
 
 // Adicionando novo obijeto 
 pessoa.email = "vitor@gmail.com"
+todos
