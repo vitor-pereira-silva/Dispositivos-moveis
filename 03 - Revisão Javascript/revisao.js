@@ -1,110 +1,205 @@
-// Comentário de uma linha
 
-/*
-Comentário
-em
-bloco
-*/
+//Ex 1
 
 
-// Variáveis
-const nome = "Gustavo"
-let idade = 20
-const maiorDeIdade = true
+function MAIUSCULA(nome) {
+  nome.toUpperCase()
+  console.log(nome)
 
-console.log(nome)
-console.log(idade)
-console.log("É maior de idade? ", maiorDeIdade)
 
-// nome = "TEste"
-idade = 19
-console.log(idade)
-
-// Operadores Aritiméticos
-const soma = 2 + 2
-const substracao = 2 - 2
-const multiplicacao = 2 * 2
-const divisao = 4 / 2
-
-console.log(soma)
-console.log(substracao)
-console.log(multiplicacao)
-console.log(divisao)
-
-const resto = 3 % 2
-let numero = 4
-console.log("RESTO -> ", resto)
-
-const incremento = numero++ // + 1
-console.log("INCREMENTO -> ", incremento)
-
-const decremento = numero-- // - 1
-console.log("DECREMENTO -> ", decremento)
-
-// Faz a operação e a atribuição logo em seguida
-let a = 3
-a %= 2
-console.log(a)
-
-// Operadores de Comparação
-const igual = 10 == '10'
-console.log(igual)
-const estritamenteIgual = 10 === '10'
-console.log(estritamenteIgual)
-
-const maior = 3 > 2 // true
-const menor = 2 < 3 // false
-const maiorOuIgual = 3 >= 2 // true
-const menorOuIgual = 2 <= 3 //false
-
-idade = 10
-
-// Estruturas de controle
-if (idade >= 18) {
-  console.log("Maior de Idade")
 }
 
-if (idade >= 18) {
-  console.log("Maior de Idade")
-} else {
-  console.log("Menor de idade")
-}
+function minuscula(nome) {
 
-if (idade >= 18) {
-  console.log("Maior de idade")
-} else if(idade < 18) {
-  console.log("Menor de idade")
-} else {
-  console.log("Valor inválido")
+  nome.toLowerCase()
+  console.log(nome)
+
+
+
 }
 
 
-// Operador ternário
-const checkMaiorDeIdade = idade >= 18 ? "Maior de idade" : "Menor de idade";
-console.log(checkMaiorDeIdade)
+function inverter(nome) {
+  nome.split('').reverse().join()
+  console.log(nome)
 
-// ARRAY
-let frutas = ["maçã", "Banana", "uva"];
-console.log(frutas[0]);
-console.log(frutas[1]);
-console.log(frutas[2]);
-console.log(frutas.length);
 
-// Adicionar uma nova fruta ao array
-frutas.push("laranja");
+}
 
-// Percorrer e imprimir todas as frutas
-frutas.forEach((fruta) => {
-  console.log(fruta);
-});
-frutas.pop();
-console.log(frutas);
+MAIUSCULA("vitor")
+minuscula("VITOR")
+inverter("vitor")
 
-// Objetos
-let pessoa ={
-  nome: "Vitor",
- idade : 24}
 
-// Adicionando novo obijeto 
-pessoa.email = "vitor@gmail.com"
-todos
+//Ex 2
+
+function somar(numero1, numero2) {
+  const resultado = numero1 + numero2
+  console.log(resultado)
+}
+
+function subtrair(numero1, numero2) {
+  const resultado = numero1 - numero2
+  console.log(resultado)
+}
+
+function multiplicar(numero1, numero2) {
+  const resultado = numero1 * numero2
+  console.log(resultado)
+}
+
+function dividir(numero1, numero2) {
+  const resultado = numero1 / numero2
+  console.log(resultado)
+}
+
+function verificar(numero1, numero2) {
+
+  if (numero1 > numero2) {
+      return console.log(`o ${numero1} é maior que o ${numero2}`)
+  }
+
+  if (numero1 < numero2) {
+      return console.log(`o ${numero2} é maior que o ${numero1}`)
+
+  }
+
+  else {
+      console.log("numero invalido")
+  }
+
+}
+
+somar(15, 5)
+subtrair(15, 5)
+multiplicar(15, 5)
+dividir(15, 5)
+verificar(15, 5)
+
+
+//Ex 3
+
+function validador(idade) {
+  if (idade < 0) {
+      return console.log("Idade inválida")
+  }
+
+
+  else if (idade < 18) {
+      return console.log("É de menor")
+  }
+
+  else if (idade <= 64) {
+      return console.log("É de maior")
+  }
+  else {
+      console.log("idosa")
+  }
+
+}
+
+validador(65)
+
+
+//Ex 4
+
+function imprecao() {
+  for (let i = 1; i < 101; i++) {
+      console.log(i)
+
+  }
+}
+
+imprecao()
+
+//Ex 5
+function posicao(numero) {
+  dobro = numero * 2
+  console.log(numero)
+  triplo = numero * 3
+  console.log(triplo)
+  quadruplo = numero * 4
+  console.log(quadruplo)
+
+}
+
+posicao(5)
+
+//Ex 06
+function array() {
+  let numeros = [10, 20, 30, 40, 50]
+  numeros.push(51)
+  console.log(numeros)
+
+  numeros.shift()
+  console.log(numeros)
+
+  console.log(Math.max(...numeros))
+  
+}
+
+array()
+
+//Ex 07
+function tranformar(){
+  let frutas = ["Maçã", "Banana", "Abacaxi", "Laranja"]
+  let frutasMaiusculas = frutas.map( fruta => fruta.toUpperCase())
+  console.log(frutasMaiusculas)
+
+  let frutaA = frutas.filter(fruta => fruta.includes("A"))
+  console.log(frutaA)
+    
+}
+
+tranformar()
+
+//Ex 08
+
+let pessoa = { 
+  nome: "Carlos", 
+  idade: 28, 
+  cidade: "São Paulo" }
+
+pessoa.mae = "Maria"
+
+console.log(pessoa)
+delete pessoa.idade
+console.log(pessoa)
+console.log(Object.keys(pessoa))
+
+//Ex 09
+
+let livro = { titulo: "O Senhor dos Anéis", 
+  autor: "J.R. Tolkien", 
+  ano: 1954 }
+
+let {titulo, autor, ano} = livro
+
+console.log(livro)
+
+function tituloNome(){
+  console.log(`Título: ${titulo}, Autor: ${autor}`)
+
+}
+
+tituloNome()
+
+//Ex 10
+
+function num (numeros) {
+  
+  let numerosPares = numeros.filter(num => num % 2 === 0)
+  console.log("Números pares:", numerosPares)
+
+  
+  let dobrados = numerosPares.map(num => num * 2)
+  console.log("Números multiplicados por 2:", dobrados)
+
+ 
+  let somaTotal = dobrados.reduce((acumulador, num) => acumulador + num, 0)
+  console.log("Soma total:", somaTotal)
+}
+
+num([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+
