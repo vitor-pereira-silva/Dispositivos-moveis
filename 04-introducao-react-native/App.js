@@ -1,73 +1,90 @@
-// inports
-
+// Imports
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Image, ScrollView } from 'react-native';
 
-// Função que define o componente
-
+// Função que representa o componente
 export default function App() {
-  // Lógica do componente 
-  const nome = " vitor"
+  // Lógica do componente
+  const nome = "Gustavo"
+
   function alerta() {
-    alert("clicou no botão")
+    alert("Cliclou no botão!!!!!")
   }
-  // retronar
+
+  // retorno dessa função com o template do que vai ser
+  // renderizado na tela (JSX)
   return (
+    // ScrollView permite que o conteudo vá até depois da barra de rolagem
+    // não pode ser usado sozinho, tem que ter uma View dentro
+    // // ele só envolve o conteudo
     <ScrollView>
       <View style={styles.container}>
+        {/* comentário dentro do JSX */}
+        {/*  */}
+        {/* <StatusBar style="auto" /> */}
+        {/* css inline */}
+        <Text style={{ fontSize: 50, fontStyle: 'italic' }} >Algum texto qualuer</Text>
 
+        {/* css com StyleSheet */}
+        <Text style={styles.textGrande}>HELLO</Text>
 
+        <Text>{nome}</Text>
+        <Button title='Enviar' onPress={alerta}></Button>
+        {/* Imagem de fora com link */}
         <Image
           source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPbirLXRJtVpzOpUbkRkcm2-NZKRY-fvXBjg&s"
-
+            uri: 'https://i.pinimg.com/736x/47/e7/fd/47e7fd39f8e5a44877234f1d3c7bf1dc.jpg'
           }}
-          //css
           style={{
-            height: 400,
-            width: 400
+            height: 300,
+            width: 300
           }}
         />
-        {/* imagem da web */}
+        {/* Imagem de dentro do projeto */}
         <Image
-          source={{
-            uri: "https://bandalheira.cdn.magazord.com.br/img/2021/06/produto/4659/13-justiceiro-1-1.jpg?ims=fit-in/1200x1200"
-
-          }}
-          //css
+          source={require('./imagens/image.png')}
           style={{
-            height: 400,
-            width: 400
+            height: 300,
+            width: 300
           }}
         />
-
-        {/* imagem baixada  */}
         <Image
-          source={require('./imagens/imagem.png')}
-          //css
+          source={require('./imagens/image.png')}
           style={{
-            height: 400,
-            width: 400
+            height: 300,
+            width: 300
           }}
         />
-        <Button title='Clicar' onPress={alerta}></Button>
-        <StatusBar style="auto" />
-
-        <Text>{2 + 2}</Text>
-
-        <Text>Bem vindo {nome}</Text >
-
-
+        <Image
+          source={require('./imagens/image.png')}
+          style={{
+            height: 300,
+            width: 300
+          }}
+        />
+        <Image
+          source={require('./imagens/image.png')}
+          style={{
+            height: 300,
+            width: 300
+          }}
+        />
       </View>
     </ScrollView>
   );
 }
 
+// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#8B0000',
+    backgroundColor: 'yellow',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textGrande: {
+    fontSize: 40,
+    fontWeight: 900
+  }
 });
