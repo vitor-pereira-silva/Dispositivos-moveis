@@ -32,3 +32,12 @@ npm install -g expo-cli
 
 npx create-expo-app@latest nome-projeto --template blank
 
+Instalação
+
+1. Instale a biblioteca React Native Paper:
+
+npm install react-native-paper
+
+2. Instale as dependências necessárias:
+
+npm install react-native-vector-icons react-native-safe-area-context
