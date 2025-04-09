@@ -18,13 +18,14 @@ listadas no package.json. */
 
 npm install
 
-      
+ ///////////////////////////////////////////////////////////////     
       Instalando o Expo CLI
 
   No terminal, execute o comando:
 
 npm install -g expo-cli
 
+///////////////////////////////////////////////////////////////
 
     Criando um Projeto com Expo
 
@@ -32,7 +33,9 @@ npm install -g expo-cli
 
 npx create-expo-app@latest nome-projeto --template blank
 
-Instalação
+/////////////////////////////////////////////////////////////////
+
+Instalação do Paper
 
 1. Instale a biblioteca React Native Paper:
 
@@ -41,3 +44,22 @@ npm install react-native-paper
 2. Instale as dependências necessárias:
 
 npm install react-native-vector-icons react-native-safe-area-context
+
+//////////////////////////////////////////////////////////////////////////
+Instalação do React Navigation
+
+1: Instale a biblioteca do React Navigation
+
+npm install @react-navigation/native
+
+2. Instale as dependências necessárias
+
+npx expo install react-native-screens react-native-safe-area-context
+
+3: Instale o pacote de navegação por abas
+
+npm install @react-navigation/bottom-tabs
+////////////////////////////////////////////////
+1: Importe os pacotes necessários
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
