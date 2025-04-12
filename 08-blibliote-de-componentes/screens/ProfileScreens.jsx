@@ -2,13 +2,24 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { Text } from 'react-native-paper'
 
-export default function ProfileScreens() {
+ 
+
+export default function ProfileScreen() {
   return (
-   
-     <View>
-      <Text variant='titleLarge' style={{textAlign:'center'}}>Tela de Profile </Text>
+    <View>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
     </View>
-   
   )
 }
 

@@ -63,3 +63,10 @@ npm install @react-navigation/bottom-tabs
 1: Importe os pacotes necessários
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+
+
+
+///////////////////////////////////////////////////////////////
+procura icones 
+
+https://ionic.io/ionicons
