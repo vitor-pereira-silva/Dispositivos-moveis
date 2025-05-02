@@ -70,3 +70,26 @@ import { NavigationContainer } from '@react-navigation/native';
 procura icones 
 
 https://ionic.io/ionicons
+
+
+////////////////////////////////dia 02/05/////////////////////////////////////////////
+# Criar o novo projeto
+npx create-expo-app@latest 09-navegacao-stack --template blank
+
+# instalando lib de componentes paper
+npm install react-native-vector-icons react-native-safe-area-context react-native-paper
+
+# Instale a biblioteca do React Navigation
+npm install @react-navigation/native
+
+# Instale o pacote de navegação por Stack
+npm install @react-navigation/stack
+
+# Instale as dependências necessárias
+npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler
+
+
+busca de ip 
+Get-NetIPAddress
+
+
