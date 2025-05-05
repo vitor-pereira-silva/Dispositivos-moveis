@@ -4,13 +4,13 @@ import StackRoutes from "./src/routes/StackRoutes";
 
 export default function App() {
   return (
-   <PaperProvider>
-    <NavigationContainer>
- <StackRoutes></StackRoutes>
-    </NavigationContainer>
-   </PaperProvider>
+    <PaperProvider>
+      <NavigationContainer>
+
+        <StackRoutes></StackRoutes>
+
+      </NavigationContainer>
+      
+    </PaperProvider>
   );
 }
-
-
-
