@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Image, StyleSheet, ScrollView } from 'react-native';
 import { Button, TextInput, Text } from 'react-native-paper';
 import * as ImagePicker from 'expo-image-picker';
-import produtosStorage from '../../routes/produtosStorage';
+import produtosStorage from '../routes/produtosStorage';
 
-export default function CadastroProdutosScreen({ navigation }) {
+export default function CadastroProdutosScreen({ route, navigation }) {
+  const produtoEditando = route?.params?.produto || null;
+
   const [nome, setNome] = useState('');
   const [descricao, setDescricao] = useState('');
   const [dataValidade, setDataValidade] = useState('');
   const [valor, setValor] = useState('');
   const [imagem, setImagem] = useState(null);
   const [mensagemErro, setMensagemErro] = useState('');
+
+  useEffect(() => {
+    if (produtoEditando) {
+      setNome(produtoEditando.nome || '');
+      setDescricao(produtoEditando.descricao || '');
+      setDataValidade(produtoEditando.dataValidade || '');
+      setValor(produtoEditando.valor?.toString() || '');
+      setImagem(produtoEditando.imagem || null);
+    }
+  }, [produtoEditando]);
 
   async function escolherImagem() {
     setMensagemErro('');
@@ -40,6 +52,7 @@ export default function CadastroProdutosScreen({ navigation }) {
     }
 
     const produto = {
+      id: produtoEditando?.id || Date.now(),
       nome,
       descricao,
       dataValidade,
@@ -48,16 +61,8 @@ export default function CadastroProdutosScreen({ navigation }) {
     };
 
     try {
-      await produtosStorage.salvar(produto); // <-- Salva no AsyncStorage
-      navigation.navigate('DetalhesDoProduto', { produto }); // <-- Vai para a tela de detalhes
-
-      // Limpa os campos
-      setNome('');
-      setDescricao('');
-      setDataValidade('');
-      setValor('');
-      setImagem(null);
-      setMensagemErro('Produto salvo com sucesso!');
+      await produtosStorage.salvar(produto); // salva no AsyncStorage
+      navigation.navigate('Produtos'); // <-- redireciona para a tela de produtos
     } catch (error) {
       console.error(error);
       setMensagemErro('Erro ao salvar o produto.');
@@ -112,10 +117,7 @@ export default function CadastroProdutosScreen({ navigation }) {
       </Button>
 
       {imagem && (
-        <Image
-          source={{ uri: imagem }}
-          style={styles.previewImage}
-        />
+        <Image source={{ uri: imagem }} style={styles.previewImage} />
       )}
 
       <Button mode="contained" onPress={salvar} style={styles.saveButton}>
